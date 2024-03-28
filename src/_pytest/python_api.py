@@ -143,6 +143,7 @@ class ApproxNumpy(ApproxBase):
         return f"approx({list_scalars!r})"
 
     def _repr_compare(self, other_side: "ndarray") -> List[str]:
+        other_side = _as_numpy_array(other_side)
         import itertools
         import math
 
